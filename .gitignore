@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+data/creditcard.csv
+data/processed_data.csv
+
 # Distribution / packaging
 .Python
 build/
