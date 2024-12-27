@@ -34,30 +34,49 @@ The primary model used in this project is **Logistic Regression**, which is a si
 - The model was trained using the **processed dataset** after handling class imbalance and normalizing the features.
 
 ## Evaluation Metrics
-The performance of the **Logistic Regression** model is evaluated using the following metrics:
 
-1. **Accuracy**: The proportion of correctly predicted transactions (fraudulent and non-fraudulent).
-2. **Precision**: The proportion of correctly predicted fraudulent transactions out of all predicted fraudulent transactions. It answers: "Of all the predicted fraud cases, how many were actually fraud?"
-3. **Recall**: The proportion of actual fraudulent transactions that were correctly predicted by the model. It answers: "Of all the actual fraud cases, how many were detected?"
-4. **F1 Score**: The harmonic mean of precision and recall. This metric is useful for balancing the trade-off between precision and recall, particularly when dealing with imbalanced datasets.
+The **Logistic Regression** model was evaluated on various metrics to understand its performance in detecting fraudulent transactions.
 
-### Formulae:
-- **Precision** = TP / (TP + FP)
-- **Recall** = TP / (TP + FN)
-- **F1 Score** = 2 * (Precision * Recall) / (Precision + Recall)
+### Test Accuracy:
+- **Test Accuracy**: 97.35%  
+  The model correctly predicted 97.35% of the total transactions in the test set, demonstrating a high level of accuracy.
 
-Where:
-- **TP** = True Positives (Fraud predicted as Fraud)
-- **FP** = False Positives (Non-fraud predicted as Fraud)
-- **FN** = False Negatives (Fraud predicted as Non-fraud)
+### Classification Report:
+The classification report provides detailed metrics for both classes (fraudulent and non-fraudulent transactions):
 
-## Conclusion
-The **Logistic Regression** model performs well in detecting fraudulent transactions after handling class imbalance using SMOTE and normalizing the data with MinMaxScaler. The model can accurately classify transactions into fraudulent and non-fraudulent categories, providing valuable insights for fraud detection systems.
 
-### Future Improvements:
-- Experiment with more advanced models like **Random Forest**, **XGBoost**, or **Neural Networks** for potentially better performance.
-- Consider implementing more sophisticated handling for imbalanced data or exploring different oversampling techniques.
-- Investigate methods for **real-time fraud detection** in a production environment.
+#### Metrics Explanation:
+- **Precision**: 
+  - Precision for class 0 (non-fraudulent): **97%**
+  - Precision for class 1 (fraudulent): **98%**
+  - Precision indicates the proportion of correctly predicted fraudulent transactions (class 1) out of all transactions predicted as fraudulent.
+  
+- **Recall**: 
+  - Recall for class 0 (non-fraudulent): **98%**
+  - Recall for class 1 (fraudulent): **97%**
+  - Recall indicates the proportion of actual fraudulent transactions (class 1) that were correctly identified by the model.
+  
+- **F1 Score**: 
+  - F1 Score for class 0 (non-fraudulent): **97%**
+  - F1 Score for class 1 (fraudulent): **97%**
+  - F1 score is the harmonic mean of precision and recall, offering a balance between them.
+  
+- **Accuracy**: 97.35%
+  - The overall accuracy of the model is very high, with the model correctly classifying both fraudulent and non-fraudulent transactions.
+
+- **Macro Average**: 97%
+  - The average of precision, recall, and F1-score across all classes, without considering class imbalance.
+
+- **Weighted Average**: 97%
+  - The weighted average of precision, recall, and F1-score, accounting for the number of samples in each class.
+
+### Conclusion:
+The **Logistic Regression** model demonstrates robust performance in detecting fraudulent transactions with high precision, recall, and F1 scores. The model performs well across both classes, maintaining a balanced prediction between fraudulent and non-fraudulent transactions. The results indicate that the model is capable of effectively identifying fraudulent transactions while minimizing false positives and false negatives.
+
+### Future Work:
+- Further tuning of the model hyperparameters could improve performance.
+- Experimenting with other models like **Random Forest** or **XGBoost** may yield better results, especially in dealing with imbalanced datasets.
+
 
 ## How to Run the Code
 1. Clone this repository:
